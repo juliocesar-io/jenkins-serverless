@@ -13,7 +13,7 @@ pipeline {
                 changeset "serverless/**"
             }
             steps {
-                build 'serverless'
+                build(job: 'serverless')
             }
         }
         stage('Build proxy project') {

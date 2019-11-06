@@ -1,15 +1,11 @@
+#!/usr/bin/env groovy
 pipeline {
     agent { 
         docker { 
             image 'node:12' 
         } 
     }
-    
-    environment {
-        REPO_URL = 'git@github.com:juliocesar-io/jenkins-serverless.git'
-        SHORT_BRANCH = "${BRANCH}".replace("origin/", "")
-    }
-    
+
     stages {     
         stage('install dependencies') {
             steps {
