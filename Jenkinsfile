@@ -1,27 +1,27 @@
 #!/usr/bin/env groovy
 pipeline {
     agent any
-    options {
-        timestamps()
-    }
-    triggers {
-        githubPush()
-    }
     stages {
-        stage('Build serverless project') {
-            when {
-                changeset "serverless/**"
-            }
+        stage('Build') {
             steps {
-                build(job: 'serverless')
+                echo 'build steps go here'
             }
         }
-        stage('Build proxy project') {
-            when {
-                changeset "proxy/**"
-            }
+        stage('Test') {
             steps {
-                build 'proxy'
+                echo 'test steps go here'
+            }
+        }
+        stage('deploy') {
+            when { branch 'master' }
+            steps {
+                echo 'deploy steps go here'
+            }
+        }
+        stage('smoke tests') {
+            when { branch 'master' }
+            steps {
+                echo 'smoke test steps go here'
             }
         }
     }
