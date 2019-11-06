@@ -1,0 +1,19 @@
+{
+  "name": "aws-serve-simple-http-endpoint",
+  "version": "1.0.0",
+  "description": "Example demonstrates how to setup a simple HTTP GET endpoint",
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^24.8.0"
+  },
+  "scripts": {
+    "deploy": "serverless deploy --verbose",
+    "deploy:local": ". ./local.sh && npm run deploy",
+    "test": "jest --env=node",
+    "test:ci": "npm test -- --ci --coverage"
+  },
+  "dependencies": {
+    "serverless": "^1.49.0"
+  }
+}

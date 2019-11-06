@@ -1,0 +1,5 @@
+/node_modules
+/.serverless
+/coverage
+local.sh
+package-lock.json
